@@ -1,24 +1,22 @@
-/*
+
 
 //region Description
 
 //<editor-fold desc="Description">
-package SandBox;
+package myJSON;
 
 
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
 
 import org.quickconnectfamily.json.*;
 import java.io.File;
 
-/**
- * Created by newuser on 1/28/16.
+
+ /* Created by newuser on 1/28/16.*/
 
 public class JsonCarTesting {
 
@@ -36,17 +34,15 @@ public class JsonCarTesting {
 
 
             JsonVehicle car1 = new JsonVehicle("Honda", "Civic", "2001","silver");
-            JsonVehicle car2 = new JsonVehicle("pontiac", "Grand Am", "1998","red");
-            JsonVehicle car3 = new JsonVehicle("Lincoln", "Towncar", "1992","silver");
-            JsonVehicle car4 = new JsonVehicle("Hyundai", "Tiburon", "2001","silver");
+            JsonVehicle car2 = new JsonVehicle("KIA", "Sportage", "2016", "Black");
+
+
 
             JsonVehicle car5 = new JsonVehicle();
 
             //writes the data into a file
             jsonOut.writeObject(car1);
-            jsonOut.writeObject(car2);
-            jsonOut.writeObject(car3);
-            jsonOut.writeObject(car4);
+
 
 
             //jsonIn.readObject reads data and store it to a hashmap
@@ -55,12 +51,12 @@ public class JsonCarTesting {
 
 
             //comapares data
-            JSONbean readObject = new JSONbean(parsedJSONMap);
-            JSONbean readObject2 = new JSONbean(parsedJSONMap);
+            //JSONbean readObject = new JSONbean(parsedJSONMap);
+            //JSONbean readObject2 = new JSONbean(parsedJSONMap);
 
-            System.out.println("stream same? "+readObject.equals(car1));
+         //   System.out.println("stream same? "+readObject.equals(car1));
 
-            System.out.println("stream same? "+readObject2.equals(car2));
+//            System.out.println("stream same? "+readObject2.equals(car2));
 
             System.out.println(parsedJSONMap.get("model"));
 
@@ -68,24 +64,24 @@ public class JsonCarTesting {
             System.out.println("JSON: "+jsonString1);
             String jsonString2 = JSONUtilities.stringify(car2);
             System.out.println("JSON: "+jsonString2);
-            String jsonString3 = JSONUtilities.stringify(car3);
-            System.out.println("JSON: "+jsonString3);
-            String jsonString4 = JSONUtilities.stringify(car4);
-            System.out.println("JSON: "+jsonString4);
+            // String jsonString3 = JSONUtilities.stringify(car3);
+            //System.out.println("JSON: "+jsonString3);
+            //String jsonString4 = JSONUtilities.stringify(car4);
+           // System.out.println("JSON: "+jsonString4);
 
             parsedJSONMap = (HashMap)JSONUtilities.parse(jsonString2);
             System.out.println(parsedJSONMap);
 
-            readObject = new JSONbean(parsedJSONMap);
-            System.out.println("stringify same? "+readObject.equals(car2));
-            System.out.println("stream same? "+readObject.equals(car2));
+            //readObject = new JSONbean(parsedJSONMap);
+           // System.out.println("stringify same? "+readObject.equals(car2));
+            //System.out.println("stream same? "+readObject.equals(car2));
 
 
             //NASTY PATHS!!!!!
             //null values can be inputed and outputed
 
 
-            JSONbean car5 = new JSONbean(null,"\n",null,null);
+            //JSONbean car5 = new JSONbean(null,"\n",null,null);
             jsonOut.writeObject(car5);
 
             //write object and pass null
@@ -113,7 +109,7 @@ public class JsonCarTesting {
             //System.out.println(parsedJSONMap.toString());
 
             //can only parse json file
-                /*
+
                 String parsedString = (String) JSONUtilities.parse("{\"hello\":\"HEY\"}");
                 System.out.println(parsedString);
 
@@ -142,13 +138,13 @@ public class JsonCarTesting {
             JSONOutputStream jsonOut = new JSONOutputStream(fileOut2);
             JSONInputStream jsonIn = new JSONInputStream(fileIn2);
 
-            JSONbean c1 = new JSONbean();
-            c1.setColor("orange");
-            c1.setMake("VW");
-            c1.setModel("bug");
-            c1.setYear(2005);
+            //JSONbean c1 = new JSONbean();
+            //c1.setColor("orange");
+            //c1.setMake("VW");
+            //c1.setModel("bug");
+            //c1.setYear(2005);
 
-            jsonOut.writeObject(c1);
+//            jsonOut.writeObject(c1);
 
 
         }catch (Exception e){
@@ -158,12 +154,12 @@ public class JsonCarTesting {
 
         //pass null to inputsream
         //pass null output
-      /*  try {
-            FileOutputStream fileOut3 = new FileOutputStream(null);
-            FileInputStream fileIn3 = new FileInputStream(null);
+        try {
+//            FileOutputStream fileOut3 = new FileOutputStream(null);
+  //          FileInputStream fileIn3 = new FileInputStream(null);
 
-            JSONOutputStream jsonOut = new JSONOutputStream(fileOut3);
-            JSONInputStream jsonIn = new JSONInputStream(fileIn3);
+//            JSONOutputStream jsonOut = new JSONOutputStream(fileOut3);
+  //          JSONInputStream jsonIn = new JSONInputStream(fileIn3);
         }catch (Exception e){
             System.out.println("can not pass null as input or output stream");
         }
@@ -179,4 +175,3 @@ public class JsonCarTesting {
 //</editor-fold>
 //endregion
 
-*/

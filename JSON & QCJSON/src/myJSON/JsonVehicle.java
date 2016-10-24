@@ -1,7 +1,6 @@
-package SandBox;
+package myJSON;
 
 import java.io.Serializable;
-import java.security.PrivilegedExceptionAction;
 import java.util.HashMap;
 
 /**
@@ -84,6 +83,16 @@ public class JsonVehicle implements Serializable {
         result = 31 * result + (year != null ? year.hashCode() : 0);
         result = 31 * result + (color != null ? color.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "JsonVehicle{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", year='" + year + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
 

@@ -1,6 +1,6 @@
 
 
-package SandBox;
+package myJSON;
 
 
 import java.io.Serializable;
